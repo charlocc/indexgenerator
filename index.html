@@ -1,40 +1,4 @@
-const fs = require('fs');
-const inquirer = require('inquirer');
-
-
-const questions = [
-    {
-        type: 'input',
-        message: 'Enter your name:',
-        name: 'name',
-    },
-    {
-        type: 'input',
-        message: 'Where are you from?',
-        name: 'location',
-    },
-    {
-        type: 'input',
-        message: 'Tell us about yourself',
-        name: 'bio',
-    },
-    {
-        type: 'input',
-        message: 'Enter your github URL:',
-        name: 'github',
-    },
-    {
-        type: 'input',
-        message: 'Enter your linkedIn URL:',
-        name: 'linkedin',
-    },
-   
-    ];
-
-function initialize () {inquirer
-    .prompt(questions)
-       .then(response => {
-           var html = `<!DOCTYPE html>
+<!DOCTYPE html>
            <html lang="en">
            
            <head>
@@ -61,13 +25,13 @@ function initialize () {inquirer
                <main>
                    <div class="card" style="width: 18rem;">
                        <div class="card-header">
-                           Hi, my name is ${response.name}
+                           Hi, my name is Aidan
                        </div>
                        <ul class="list-group list-group-flush">
-                           <li class="list-group-item">I'm from ${response.location}</li>
-                           <li class="list-group-item">${response.bio}</li>
-                           <li class="list-group-item"><a href="${response.github}">GitHub</a></li>
-                           <li class="list-group-item"><a href="${response.linkedin}">LinkedIn</a></li>
+                           <li class="list-group-item">I'm from New York</li>
+                           <li class="list-group-item">I also lived in New Jersey</li>
+                           <li class="list-group-item"><a href="https://www.github.com/">GitHub</a></li>
+                           <li class="list-group-item"><a href="https://www.linkedin.com/">LinkedIn</a></li>
                        </ul>
                    </div>
            
@@ -75,13 +39,4 @@ function initialize () {inquirer
            
            </body>
            
-           </html>`
-           fs.writeFile("index.html", html, (err) =>
-         err ? console.log(err) : console.log('success')
-         );
-       }) 
-         
-        
-};
-
-initialize()
+           </html>
